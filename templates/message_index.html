@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block title %} Найти пользователя для переписки {% endblock %}
+{% block content %}
+<div class="container">
+   <form>
+   <div class="form-group">
+<h3>
+Поиск пользователя для переписки
+</h3>   
+<form action={% url 'message_index' %} method="GET">
+    <label for="companion">Имя пользователя: </label>
+    <input id="companion" type="text" name="companion" value="{{ companion }}">
+    <input type="submit" value="Поиск">
+</form>
+   </div>
+<p>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</p>
+</div>
+{% endblock %}
