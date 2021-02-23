@@ -14,6 +14,6 @@
 
 
 ```
-Django, channels, redis, postgre sql, 
+Django, channels, redis, postgre sql
 
 ```
